@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(ellipse at center, #0f0f0f 0%, #1a1a1a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+  }
+
+  #logo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+    transform: scale(0.4);
+    animation: popIn 2s ease forwards;
+  }
+
+  #logo {
+    width: 100%;
+    filter: drop-shadow(0 0 30px #bb86fc);
+    animation: pulse 3s infinite;
+  }
+
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.4) rotate(-180deg);
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes pulse {
+    0% { filter: drop-shadow(0 0 10px #bb86fc); }
+    50% { filter: drop-shadow(0 0 40px #bb86fc); }
+    100% { filter: drop-shadow(0 0 10px #bb86fc); }
+  }
+
+  #text {
+    margin-top: 30px;
+    font-size: 32px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 2s ease 2s forwards;
+    text-shadow: 0 0 10px #bb86fc;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  #clickText {
+    position: absolute;
+    bottom: 20px;
+    color: #aaa;
+    font-size: 14px;
+    opacity: 0.5;
+  }
